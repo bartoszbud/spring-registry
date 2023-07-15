@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <jmxConfigurator/>
+    <include resource="logback/logback-appenders.xml"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="com.netflix" level="ERROR"/>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="APPLICATION"/>
+    </root>
+</configuration>
