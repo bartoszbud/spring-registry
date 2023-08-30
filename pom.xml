@@ -103,7 +103,7 @@
 						</ports>
 						<format>OCI</format>
 					</container>
-					<!--<containerizingMode>packaged</containerizingMode>-->
+					<containerizingMode>packaged</containerizingMode>
 					<allowInsecureRegistries>true</allowInsecureRegistries>
 				</configuration>
 			</plugin>
