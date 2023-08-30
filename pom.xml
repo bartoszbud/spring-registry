@@ -90,8 +90,8 @@
 						</auth>
 					</to>
 					<container>
-						<creationTime>ISO 8601</creationTime>
-						<filesModificationTime>ISO 8601</filesModificationTime>
+						<creationTime>EPOCH_PLUS_SECOND</creationTime>
+						<filesModificationTime>EPOCH_PLUS_SECOND</filesModificationTime>
 						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 						<jvmFlags>
 							<jvmFlag>-Xms256m</jvmFlag>
