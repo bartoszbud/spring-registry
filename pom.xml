@@ -92,7 +92,7 @@
 						</ports>
 						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 					</container>
-					<containerizingMode>packaged</containerizingMode>
+					<!--<containerizingMode>packaged</containerizingMode>-->
 					<allowInsecureRegistries>true</allowInsecureRegistries>
 				</configuration>
 			</plugin>
