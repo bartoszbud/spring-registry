@@ -101,7 +101,7 @@
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
-						<entrypoint>java,-jar,/target/ ${project.artifactId}-${project.version}.jar</entrypoint>
+						<entrypoint>java,-jar,/target/${project.artifactId}-${project.version}.jar</entrypoint>
 						<format>OCI</format>
 					</container>
 					<containerizingMode>packaged</containerizingMode>
