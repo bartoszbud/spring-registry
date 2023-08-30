@@ -8,7 +8,7 @@ pipeline {
    stages {
         stage('Build') {
            steps {
-            sh 'mvn compile jib:build -DsendCredentialsOverHttp=true'
+            sh 'mvn package -DsendCredentialsOverHttp=true'
             //sh 'mvn clean deploy -U -Dmaven.test.skip=true'
            }
         }

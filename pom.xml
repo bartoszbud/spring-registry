@@ -73,6 +73,14 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<to>
 						<image>10.0.0.24:8083/${project.artifactId}:${project.version}</image>
@@ -82,6 +90,8 @@
 						</auth>
 					</to>
 					<container>
+						<creationTime>DateTimeFormatter.ISO_DATE_TIME</creationTime>
+						<filesModificationTime>DateTimeFormatter.ISO_DATE_TIME</filesModificationTime>
 						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 						<jvmFlags>
 							<jvmFlag>-Xms256m</jvmFlag>
@@ -91,6 +101,7 @@
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
+						<format>OCI</format>
 					</container>
 					<!--<containerizingMode>packaged</containerizingMode>-->
 					<allowInsecureRegistries>true</allowInsecureRegistries>
