@@ -69,6 +69,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
@@ -92,7 +95,6 @@
 					<container>
 						<!--<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
 						<filesModificationTime>USE_CURRENT_TIMESTAMP</filesModificationTime>-->
-						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 						<jvmFlags>
 							<jvmFlag>-Xms256m</jvmFlag>
 							<jvmFlag>-Xmx256m</jvmFlag>
