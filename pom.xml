@@ -70,6 +70,31 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<to>
+						<image>10.0.0.24:8083/${project.artifactId}:${project.version}</image>
+						<auth>
+							<username>podman</username>
+							<password>podman123</password>
+						</auth>
+					</to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms256m</jvmFlag>
+							<jvmFlag>-Xmx256m</jvmFlag>
+						</jvmFlags>
+						<ports>
+							<port>8761</port>
+							<port>8761/tcp</port>
+						</ports>
+						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
+					</container>
+					<allowInsecureRegistries>true</allowInsecureRegistries>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
