@@ -90,7 +90,7 @@
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
-						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
+						<!--<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>-->
 					</container>
 					<!--<containerizingMode>packaged</containerizingMode>-->
 					<allowInsecureRegistries>true</allowInsecureRegistries>
