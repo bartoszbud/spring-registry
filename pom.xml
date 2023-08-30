@@ -90,8 +90,8 @@
 						</auth>
 					</to>
 					<container>
-						<creationTime>DateTimeFormatter.ISO_DATE_TIME</creationTime>
-						<filesModificationTime>DateTimeFormatter.ISO_DATE_TIME</filesModificationTime>
+						<creationTime>ISO 8601</creationTime>
+						<filesModificationTime>ISO 8601</filesModificationTime>
 						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 						<jvmFlags>
 							<jvmFlag>-Xms256m</jvmFlag>
