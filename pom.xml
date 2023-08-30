@@ -82,6 +82,7 @@
 						</auth>
 					</to>
 					<container>
+						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
 						<jvmFlags>
 							<jvmFlag>-Xms256m</jvmFlag>
 							<jvmFlag>-Xmx256m</jvmFlag>
@@ -90,7 +91,6 @@
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
-						<!--<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>-->
 					</container>
 					<!--<containerizingMode>packaged</containerizingMode>-->
 					<allowInsecureRegistries>true</allowInsecureRegistries>
