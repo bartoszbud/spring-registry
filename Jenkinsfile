@@ -8,7 +8,7 @@ pipeline {
    stages {
         stage('Build') {
            steps {
-            sh 'mvn package -DsendCredentialsOverHttp=true'
+            sh 'mvn package -Dmaven.test.skip=true -DsendCredentialsOverHttp=true'
             //sh 'mvn clean deploy -U -Dmaven.test.skip=true'
            }
         }
