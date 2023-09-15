@@ -119,7 +119,7 @@
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
-						<entrypoint>java,-Xms256m,-Xmx256m,-DHOSTNAME=${HOSTNAME},-jar,/app/${project.build.finalName}.jar</entrypoint>
+						<entrypoint>java,-Xms256m,-Xmx256m,-DHOSTNAME=$HOSTNAME,-jar,/app/${project.build.finalName}.jar</entrypoint>
 					</container>
 					<extraDirectories>
 						<paths>
