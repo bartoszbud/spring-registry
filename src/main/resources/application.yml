@@ -19,6 +19,8 @@ management:
       enabled: true
 
 eureka:
+  instance:
+    hostname: $(HOSTNAME)
   client:
     register-with-eureka: false
     fetch-registry: false
