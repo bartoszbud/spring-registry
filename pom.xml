@@ -69,13 +69,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
-				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version>
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.cloud.tools</groupId>
+						<artifactId>jib-layer-filter-extension-maven</artifactId>
+						<version>0.3.0</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -85,28 +95,57 @@
 					</execution>
 				</executions>
 				<configuration>
+					<containerizingMode>packaged</containerizingMode>
 					<to>
 						<image>10.0.0.24:8083/${project.artifactId}:${project.version}</image>
+						<tags>
+							<tag>${project.version}</tag>
+						</tags>
 						<auth>
 							<username>podman</username>
 							<password>podman123</password>
 						</auth>
 					</to>
 					<container>
-						<!--<creationTime>USE_CURRENT_TIMESTAMP</creationTime>
-						<filesModificationTime>USE_CURRENT_TIMESTAMP</filesModificationTime>-->
+						<mainClass>pl.lab.registryservice.RegistryServiceApplication</mainClass>
+						<labels>
+							<mvn.build.version>${project.artifactId}-${project.version}</mvn.build.version>
+						</labels>
 						<jvmFlags>
-							<jvmFlag>-Xms256m</jvmFlag>
 							<jvmFlag>-Xmx256m</jvmFlag>
+							<jvmFlag>-Xms256m</jvmFlag>
 						</jvmFlags>
 						<ports>
 							<port>8761</port>
 							<port>8761/tcp</port>
 						</ports>
-						<entrypoint>java,-jar,/app/classpath/${project.artifactId}-${project.version}.jar</entrypoint>
-						<format>OCI</format>
+						<entrypoint>java,-Xms256m,-Xmx256m,-jar,/app/${project.build.finalName}.jar</entrypoint>
 					</container>
-					<containerizingMode>packaged</containerizingMode>
+					<extraDirectories>
+						<paths>
+							<path>
+								<from>target/</from>
+								<includes>*.jar</includes>
+								<into>/app</into>
+							</path>
+						</paths>
+					</extraDirectories>
+					<pluginExtensions>
+						<pluginExtension>
+							<implementation>com.google.cloud.tools.jib.maven.extension.layerfilter.JibLayerFilterExtension</implementation>
+							<configuration implementation="com.google.cloud.tools.jib.maven.extension.layerfilter.Configuration">
+								<filters>
+									<filter>
+										<glob>/app/**</glob>
+									</filter>
+									<filter>
+										<glob>/app/${project.build.finalName}.jar</glob>
+										<toLayer>jib-custom-fatJar</toLayer>
+									</filter>
+								</filters>
+							</configuration>
+						</pluginExtension>
+					</pluginExtensions>
 					<allowInsecureRegistries>true</allowInsecureRegistries>
 				</configuration>
 			</plugin>
