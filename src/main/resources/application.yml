@@ -20,7 +20,7 @@ management:
 
 eureka:
   instance:
-    hostname: $(HOSTNAME)
+    hostname: ${HOSTNAME}
   client:
     register-with-eureka: false
     fetch-registry: false
