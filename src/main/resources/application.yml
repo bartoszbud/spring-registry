@@ -1,6 +1,6 @@
 spring:
   application:
-    name: registry-service
+    name: registry-service-sba
   boot:
     admin:
       client:
