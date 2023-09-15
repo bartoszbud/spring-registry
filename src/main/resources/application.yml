@@ -4,7 +4,7 @@ spring:
   boot:
     admin:
       client:
-        url: http://spring-admin.lab.pl/
+        url: http://spring-admin.lab.pl
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config.lab.pl/}
 
