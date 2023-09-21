@@ -2,7 +2,7 @@
 <included>
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
 
-    <property name="APPLICATION_LOG_FILE" value="/opt/microservices/logs/registry-service-sba/registry-service-sba"/>
+    <property name="APPLICATION_LOG_FILE" value="/app/logs/registry-service-sba"/>
 
     <property name="PATTERN_ES" value="%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} --- [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 

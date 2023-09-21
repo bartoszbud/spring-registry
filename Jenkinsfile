@@ -8,6 +8,7 @@
         def yml = readYaml file: 'ct.yml'
         def ct_port = "${yml.port}"
         def log_file = "${yml.log}"
+        def env = '10.0.0.188'
     }
 
     options {
@@ -38,13 +39,13 @@
          stage('Prepare') {
             steps {
                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                sh 'sh /var/jenkins_home/pipe_prepare.sh ${artifactId} ${version}'
+                sh 'sh /var/jenkins_home/pipe_prepare.sh ${env} ${artifactId} ${version}'
                }
             }
          }
          stage('Deploy') {
             steps {
-               sh 'sh /var/jenkins_home/pipe_deploy.sh ${artifactId} ${version} ${ct_port} ${log_file}'
+               sh 'sh /var/jenkins_home/pipe_deploy.sh ${env} ${artifactId} ${version} ${ct_port} ${log_file}'
             }
          }
     }

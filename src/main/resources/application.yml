@@ -4,10 +4,9 @@ spring:
   boot:
     admin:
       client:
-        url: http://spring-admin.lab.pl
+        url: http://10.0.0.188:8762
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config.lab.pl/}
-
 
 management:
   endpoints:
@@ -17,13 +16,6 @@ management:
   info:
     env:
       enabled: true
-
-eureka:
-  instance:
-    hostname: ${HOSTNAME}
-  client:
-    register-with-eureka: false
-    fetch-registry: false
 
 logging:
   level:
