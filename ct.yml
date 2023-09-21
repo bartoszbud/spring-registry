@@ -1,2 +1,2 @@
 port: 8761
-log: /var/log/
+log: /app/logs/
