@@ -111,14 +111,6 @@
 						<labels>
 							<mvn.build.version>${project.artifactId}-${project.version}</mvn.build.version>
 						</labels>
-						<jvmFlags>
-							<jvmFlag>-Xmx256m</jvmFlag>
-							<jvmFlag>-Xms256m</jvmFlag>
-						</jvmFlags>
-						<ports>
-							<port>8761</port>
-							<port>8761/tcp</port>
-						</ports>
 						<entrypoint>java,-Xms256m,-Xmx256m,-jar,/app/${project.build.finalName}.jar</entrypoint>
 					</container>
 					<extraDirectories>
