@@ -3,9 +3,9 @@
 
     environment {
         def pom = readMavenPom file: 'pom.xml'
+        def yml = readYaml file: 'ct.yml'
         def artifactId = "${pom.artifactId}"
         def version =   "${pom.version}"
-        def yml = readYaml file: 'ct.yml'
         def ct_port = "${yml.port}"
         def log_file = "${yml.log}"
         def env = '10.0.0.188'
