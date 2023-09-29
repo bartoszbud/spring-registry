@@ -8,7 +8,7 @@
         def version =   "${pom.version}"
         def ct_port = "${yml.port}"
         def log_file = "${yml.log}"
-        def env = '10.0.0.188'
+        def env = "${yml.env}"
     }
 
     options {

@@ -4,9 +4,10 @@ spring:
   boot:
     admin:
       client:
-        url: http://10.0.0.188:8762
+        url: http://spring-admin-ct.lab.pl/
+        instance: ${HOSTNAME}
   config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config.lab.pl/}
+    import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config-ct.lab.pl/}
 
 management:
   endpoints:
