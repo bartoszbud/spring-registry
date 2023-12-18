@@ -21,17 +21,17 @@
     }
 
     stages {
-         stage('Static Code Analysis') {
+         /*stage('Static Code Analysis') {
             steps {
                sh 'mvn sonar:sonar -Dsonar.host.url=http://sonarqube.lab.pl -Dsonar.login=sqa_cd42f692c2723795ea0ea43e8b07592dc888e6b8'
             }
-         }
+         }*/
          stage('Build') {
             steps {
                sh 'mvn clean package -Dmaven.test.skip=true -DsendCredentialsOverHttp=true'
             }
          }
-         stage('Test') {
+         /*stage('Test') {
             steps {
                echo 'Testing application'
             }
@@ -47,6 +47,6 @@
             steps {
                sh 'sh /var/jenkins_home/pipe_deploy.sh ${env} ${artifactId} ${version} ${ct_port} ${log_file}'
             }
-         }
+         }*/
     }
  }
