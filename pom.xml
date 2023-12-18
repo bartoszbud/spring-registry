@@ -101,7 +101,7 @@
 				<configuration>
 					<containerizingMode>packaged</containerizingMode>
 					<to>
-						<image>10.0.0.24:8083/${project.artifactId}:${project.version}</image>
+						<image>nexus-int.lab.pl/${project.artifactId}:${project.version}</image>
 						<tags>
 							<tag>${project.version}</tag>
 						</tags>
