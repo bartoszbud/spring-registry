@@ -7,7 +7,10 @@ spring:
   boot:
     admin:
       client:
-        url: http://spring-admin-service.default.svc.cluster.local
+        url: http://spring-admin-service.default.svc.cluster.
+  cloud:
+    config:
+      enabled: false
   #config:
    # import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config-service.default.svc.cluster.local:8888/}
 
