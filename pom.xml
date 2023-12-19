@@ -115,11 +115,7 @@
 						<labels>
 							<mvn.build.version>${project.artifactId}-${project.version}</mvn.build.version>
 						</labels>
-						<jvmFlags>
-							<jvmFlag>-Xms256m</jvmFlag>
-							<jvmFlag>-Xmx256m</jvmFlag>
-						</jvmFlags>
-						<entrypoint>java,-jar,/app/${project.build.finalName}.jar</entrypoint>
+						<entrypoint>java,-Xms256m,-Xmx256m,-jar,/app/${project.build.finalName}.jar</entrypoint>
 					</container>
 					<extraDirectories>
 						<paths>
