@@ -101,13 +101,13 @@
 				<configuration>
 					<containerizingMode>packaged</containerizingMode>
 					<to>
-						<image>nexus-int.lab.pl/${project.artifactId}:${project.version}</image>
+						<image>bartoszbud/${project.artifactId}:${project.version}</image>
 						<tags>
 							<tag>${project.version}</tag>
 						</tags>
 						<auth>
-							<username>podman</username>
-							<password>podman123</password>
+							<username>bartoszbud</username>
+							<password>lGfJeQgYrd1FI2emxMvu</password>
 						</auth>
 					</to>
 					<container>

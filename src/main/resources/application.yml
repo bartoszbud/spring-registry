@@ -7,9 +7,10 @@ spring:
   boot:
     admin:
       client:
-        url: http://spring-admin-service.default.svc.cluster
-  config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://spring-config-service.default.svc.cluster.local}
+        url: http://spring-admin-service/
+        instance:
+          name: spring-registry-sba
+          prefer-ip: true
 
 eureka:
   client:
