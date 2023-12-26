@@ -106,8 +106,8 @@
 							<tag>${project.version}</tag>
 						</tags>
 						<auth>
-							<username>bartoszbud</username>
-							<password>lGfJeQgYrd1FI2emxMvu</password>
+							<username>***</username>
+							<password>***</password>
 						</auth>
 					</to>
 					<container>
