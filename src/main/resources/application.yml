@@ -11,6 +11,9 @@ spring:
         instance:
           name: spring-registry-sba
           prefer-ip: true
+  cloud:
+    config:
+      enabled: false
 
 eureka:
   client:
